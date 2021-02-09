@@ -1,0 +1,155 @@
+a.button{
+	display:inline-block;
+	padding:0.35em 1.2em;
+	border:0.1em solid #FFFFFF;
+	margin:0 0.3em 0.3em 0;
+	border-radius:0.12em;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-family:'Roboto',sans-serif;
+	font-weight:300;
+	color:#FFFFFF;
+	text-align:center;
+	transition: all 0.2s;
+	position: center;
+	width: 250px;
+	height: 50px;
+	font-size: 30px;
+}
+a.button:hover{
+	color:#000000;
+	background-color:#FFFFFF;
+}
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+section
+{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background: #000200;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+section h2
+{
+	color: transparent;
+	font-weight:900;
+	font-size: 14em;
+	-webkit-text-stroke: 2px #fff;
+}
+section .star
+{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	animation: animate 8s ease-in-out infinite, backgroundmove 16s linear infinite;
+}
+section .star.star1
+{
+	animation-delay: 0s;
+	background: url(star1.png);
+}
+section .star.star2
+{
+	animation-delay: -1s;
+	background: url(star2.png);
+}
+section .star.star3
+{
+	animation-delay: -2s;
+	background: url(star3.png);
+}
+section .star.star4
+{
+	animation-delay: -3s;
+	background: url(star4.png);
+}
+section .star.star5
+{
+	animation-delay: -4s;
+	background: url(star5.png);
+}
+section .star.star6
+{
+	animation-delay: -5s;
+	background: url(star6.png);
+}
+section .star.star7
+{
+	animation-delay: -6s;
+	background: url(star7.png);
+}
+section .star.star8
+{
+	animation-delay: -7s;
+	background: url(star8.png);
+}
+@keyframes animate
+{
+	0%,20%,40%,60%,80%,100%
+	{
+		opacity: 0;
+	}
+	10%,30%,50%,70%,90%
+	{
+		opacity: 1;
+	}
+}
+@keyframes backgroundmove
+{
+	0%
+	{
+		transform: scale(1);
+	}
+	100%
+	{
+		transform: scale(2);
+	}
+}
+.bouncy{
+	animation:bouncy 5s infinite linear;
+	position:relative;
+}
+@keyframes bouncy {
+	0%{top:0em}
+	40%{top:0em}
+	43%{top:-0.9em}
+	46%{top:0em}
+	48%{top:-0.4em}
+	50%{top:0em}
+	100%{top:0em;}
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+
+h1 {
+    position: relative;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: calc(20px + 5vw);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-shadow: 0 0 0.15em #1da9cc;
+    user-select: none;
+    white-space: nowrap;
+    filter: blur(0.007em);
+    animation: shake 2.5s linear forwards;
+}

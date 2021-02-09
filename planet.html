@@ -1,0 +1,68 @@
+<html>
+<head>
+		<title> Lost In Space </title>
+		<link rel="stylesheet" href="planet.css">
+</head>
+<body>
+	
+	<section>
+		<div class="star star1"></div>
+		<div class="star star2"></div>
+		<div class="star star3"></div>
+		<div class="star star4"></div>
+		<div class="star star5"></div>
+		<div class="star star6"></div>
+		<div class="star star7"></div>
+		<div class="star star8"></div>
+		<a href="return.html" id="Zurbon"><img class="image-hover-highlight Zurbon" src="Zurbon1.png" alt="Zurbon">
+			<p class="Zurbon-hide" id="Zurbon-hide">Zurbon</p>
+		</a>
+		<a href="test.html" id="Zeta"><img class="image-hover-highlight Zeta" src="Zeta1.png" alt="Zeta">
+			<p class="Zeta-hide" id="Zeta-hide">Zeta</p>
+		</a>
+		<a href="something"><img class="image-hover-highlight Upharus" src="Upharus1.png" alt="Upharus" class="image-hover-highlight"</a>
+		<p class="Upharus-hide">Upharus</p>
+		<a href="something"><img class="image-hover-highlight Pluton" src="Pluton1.png" alt="Pluton" class="image-hover-highlight"</a>
+		<p class="Pluton-hide">Pluton</p>
+		<a href="something"><img class="image-hover-highlight Nerilia" src="Nerilia1.png" alt="Nerilia" class="image-hover-highlight"</a>
+		<p class="Nerilia-hide">Nerilia</p>
+		<a href="something"><img class="image-hover-highlight Astrix" src="Astrix-7.png" alt="Astrix" class="image-hover-highlight"</a>
+		<p class="Astrix-hide">Astrix-7</p>
+		<a href="something" class="button">Terminal</a>
+	</div>
+	</section>
+	
+<script>
+
+function getUrlVars(variable) {
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for(var i=0;i<vars.length;i++){
+		var pair = vars[i].split("=");
+		if(pair[0] == variable){return pair[1];}
+	}
+	return(false)
+}
+
+
+if(getUrlVars("zurbonClicked") == "true"){
+	sessionStorage.setItem("zurbonClicked","true");
+	document.getElementById("Zurbon").href = "#";
+	document.getElementById("Zurbon-hide").innerHTML = "Already Visited";
+}
+if(getUrlVars("zetaClicked") == "true"){
+	document.getElementById("Zeta").href = "#";
+	document.getElementById("Zeta-hide").innerHTML = "Already Visited";
+}
+if(sessionStorage.getItem("zurbonClicked") == "true"){
+	document.getElementById("Zurbon").href = "#";
+	document.getElementById("Zurbon-hide").innerHTML = "Already Visited";
+}
+
+			
+	
+</script>
+
+
+</body>
+<html>
