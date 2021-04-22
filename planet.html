@@ -6,58 +6,144 @@
 <body>
 	
 	<section>
-		<div class="star star1"></div>
-		<div class="star star2"></div>
-		<div class="star star3"></div>
-		<div class="star star4"></div>
-		<div class="star star5"></div>
-		<div class="star star6"></div>
-		<div class="star star7"></div>
-		<div class="star star8"></div>
-		<a href="return.html" id="Zurbon"><img class="image-hover-highlight Zurbon" src="Zurbon1.png" alt="Zurbon">
+		<div class="stars star1"></div>
+		<div class="stars star2"></div>
+		<div class="stars star3"></div>
+		<div class="stars star4"></div>
+		<div class="stars star5"></div>
+		<div class="stars star6"></div>
+		<div class="stars star7"></div>
+		<div class="stars star8"></div>
+		<a href="zurbonintro.html" id="Zurbon"><img class="image-highlight Zurbon" src="Zurbon1.png" alt="Zurbon">
 			<p class="Zurbon-hide" id="Zurbon-hide">Zurbon</p>
 		</a>
-		<a href="test.html" id="Zeta"><img class="image-hover-highlight Zeta" src="Zeta1.png" alt="Zeta">
+		<a href="zeta1.html" id="Zeta"><img class="image-highlight Zeta" src="Zeta1.png" alt="Zeta">
 			<p class="Zeta-hide" id="Zeta-hide">Zeta</p>
 		</a>
-		<a href="something"><img class="image-hover-highlight Upharus" src="Upharus1.png" alt="Upharus" class="image-hover-highlight"</a>
-		<p class="Upharus-hide">Upharus</p>
-		<a href="something"><img class="image-hover-highlight Pluton" src="Pluton1.png" alt="Pluton" class="image-hover-highlight"</a>
-		<p class="Pluton-hide">Pluton</p>
-		<a href="something"><img class="image-hover-highlight Nerilia" src="Nerilia1.png" alt="Nerilia" class="image-hover-highlight"</a>
-		<p class="Nerilia-hide">Nerilia</p>
-		<a href="something"><img class="image-hover-highlight Astrix" src="Astrix-7.png" alt="Astrix" class="image-hover-highlight"</a>
-		<p class="Astrix-hide">Astrix-7</p>
-		<a href="something" class="button">Terminal</a>
+		<a href="upharus-intro.html" id="Upharus"><img class="image-highlight Upharus" src="Upharus1.png" alt="Upharus">
+			<p class="Upharus-hide" id="Upharus-hide">Upharus</p>
+		</a>
+		<a href="pluton-intro.html" id="Pluton"><img class="image-highlight Pluton" src="Pluton1.png" alt="Pluton">
+			<p class="Pluton-hide" id="Pluton-hide">Pluton</p>
+		</a>
+		<a href="nerilia-intro.html" id="Nerilia"><img class="image-highlight Nerilia" src="Nerilia1.png" alt="Nerilia">
+			<p class="Nerilia-hide" id="Nerilia-hide">Nerilia</p>
+		</a>
+		<a href="astrix-intro.html" id="Astrix"><img class="image-highlight Astrix" src="Astrix-7.png" alt="Astrix">
+			<p class="Astrix-hide" id="Astrix-hide">Astrix-7</p>
+		</a>
+		<a href="terminal.html" class="button">Terminal</a>
 	</div>
 	</section>
 	
 <script>
-
+//Code to retrieve variable from link was taken from https://css-tricks.com/snippets/javascript/get-url-variables/
+//function to check url variables
 function getUrlVars(variable) {
+	//query returns the query part of the url, substring(1) removes the first character (in this cas the ?)
 	var query = window.location.search.substring(1);
+	//splits the whole query each time a & is found (as this signifies a new variable)
 	var vars = query.split("&");
+	//for each variable that was added to vars
 	for(var i=0;i<vars.length;i++){
+		//pair equals name and value, if variable=hello is found pair[0] would be variable and pair[1] would be hello.
 		var pair = vars[i].split("=");
+		//if pair[0] is equally to the parameter that was passed in return the value
 		if(pair[0] == variable){return pair[1];}
 	}
 	return(false)
 }
 
+//set planet count equal to 0
+var count = 0;
 
+//call function with the known key and check that the value is true
 if(getUrlVars("zurbonClicked") == "true"){
+	//if so permanently store this
 	sessionStorage.setItem("zurbonClicked","true");
-	document.getElementById("Zurbon").href = "#";
-	document.getElementById("Zurbon-hide").innerHTML = "Already Visited";
 }
 if(getUrlVars("zetaClicked") == "true"){
-	document.getElementById("Zeta").href = "#";
-	document.getElementById("Zeta-hide").innerHTML = "Already Visited";
+	sessionStorage.setItem("zetaClicked","true");
 }
+if(getUrlVars("astrixClicked") == "true"){
+	sessionStorage.setItem("astrixClicked","true");
+}
+if(getUrlVars("upharusClicked") == "true"){
+	sessionStorage.setItem("upharusClicked","true");
+}
+if(getUrlVars("neriliaClicked") == "true"){
+	sessionStorage.setItem("neriliaClicked","true");
+}
+if(getUrlVars("plutonClicked") == "true"){
+	sessionStorage.setItem("plutonClicked","true");
+}
+//check storage to see if variable equals true
+//this will be done each time the page is reloaded (the above method only works rhe first time and is subsequently removed)
 if(sessionStorage.getItem("zurbonClicked") == "true"){
-	document.getElementById("Zurbon").href = "#";
+	//change the link to # (this usua;;y returns the user to the top of the page but in this case it does nothing as there is no scrolling)
+	document.getElementById("Zurbon").href = "javascript:void(0)";
+	//this changes the planet text to let the user know they have already visited the planet
 	document.getElementById("Zurbon-hide").innerHTML = "Already Visited";
+	//adds one to the planet visited count
+	count++;
 }
+if(sessionStorage.getItem("zetaClicked") == "true"){
+	document.getElementById("Zeta").href = "javascript:void(0)";
+	document.getElementById("Zeta-hide").innerHTML = "Already Visited";
+	count++;
+}
+if(sessionStorage.getItem("astrixClicked") == "true"){
+	document.getElementById("Astrix").href = "javascript:void(0)";
+	document.getElementById("Astrix-hide").innerHTML = "Already Visited";
+	count++;
+}
+if(sessionStorage.getItem("upharusClicked") == "true"){
+	document.getElementById("Upharus").href = "javascript:void(0)";
+	document.getElementById("Upharus-hide").innerHTML = "Already Visited";
+	count++;
+}
+if(sessionStorage.getItem("neriliaClicked") == "true"){
+	document.getElementById("Nerilia").href = "javascript:void(0)";
+	document.getElementById("Nerilia-hide").innerHTML = "Already Visited";
+	count++;
+}
+if(sessionStorage.getItem("plutonClicked") == "true"){
+	document.getElementById("Pluton").href = "javascript:void(0)";
+	document.getElementById("Pluton-hide").innerHTML = "Already Visited";
+	count++;
+}
+
+//if 3 planets have been visited then this code will run
+if(count == 3){
+    
+	//this will change the link to the asteroid page but only if it is the original link
+	//this is to prevent the already visited planets from being re activated for the asteroid link.
+	if(document.getElementById("Astrix").href != "javascript:void(0)"){
+		document.getElementById("Astrix").href = "asteroid.html";
+	}
+	if(document.getElementById("Nerilia").href != "javascript:void(0)"){
+		document.getElementById("Nerilia").href = "asteroid.html";
+	}
+	if(document.getElementById("Zeta").href != "javascript:void(0)"){
+		document.getElementById("Zeta").href = "asteroid.html";
+	}
+	if(document.getElementById("Zurbon").href != "javascript:void(0)"){
+		document.getElementById("Zurbon").href = "asteroid.html";
+	}
+	if(document.getElementById("Pluton").href != "javascript:void(0)"){
+		document.getElementById("Pluton").href = "asteroid.html";
+	}
+	if(document.getElementById("Upharus").href != "javascript:void(0)"){
+		document.getElementById("Upharus").href = "asteroid.html";
+	}
+}
+if(getUrlVars("coordinates") == "true"){
+	sessionStorage.setItem("coordinates","true");
+}
+if(getUrlVars("alienTech") == "true"){
+	sessionStorage.setItem("alienTech","true");
+}
+
 
 			
 	

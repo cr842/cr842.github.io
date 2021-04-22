@@ -16,7 +16,7 @@ section
 	justify-content: center;
 	align-items: center;
 }
-section .star
+section .stars
 {
 	position: absolute;
 	top:0;
@@ -26,42 +26,42 @@ section .star
 	pointer-events: none;
 	animation: animate 8s ease-in-out infinite, backgroundmove 16s linear infinite;
 }
-section .star.star1
+section .stars.star1
 {
 	animation-delay: 0s;
 	background: url(star1.png);
 }
-section .star.star2
+section .stars.star2
 {
 	animation-delay: -1s;
 	background: url(star2.png);
 }
-section .star.star3
+section .stars.star3
 {
 	animation-delay: -2s;
 	background: url(star3.png);
 }
-section .star.star4
+section .stars.star4
 {
 	animation-delay: -3s;
 	background: url(star4.png);
 }
-section .star.star5
+section .stars.star5
 {
 	animation-delay: -4s;
 	background: url(star5.png);
 }
-section .star.star6
+section .stars.star6
 {
 	animation-delay: -5s;
 	background: url(star6.png);
 }
-section .star.star7
+section .stars.star7
 {
 	animation-delay: -6s;
 	background: url(star7.png);
 }
-section .star.star8
+section .stars.star8
 {
 	animation-delay: -7s;
 	background: url(star8.png);
@@ -122,11 +122,11 @@ body {
 	top: 555px;
 	left: 520px;
 }
-img.image-hover-highlight{
+img.image-highlight{
 	-webkit-transition: all 0.50s;
 	transition: all 0.5s;
 }
-img.image-hover-highlight:hover {
+img.image-highlight:hover {
 		border-radius: 100px;
 		border: 1px solid rgba(255, 255, 255, 0.5);
 		filter: brightness(150%);
@@ -210,7 +210,7 @@ a.button{
 	border-radius:0.12em;
 	box-sizing: border-box;
 	text-decoration:none;
-	font-family:'Roboto',sans-serif;
+	font-family:"Courier";
 	font-weight:300;
 	color:white;
 	background-color:black;
@@ -225,8 +225,6 @@ a.button:hover{
 	color:#000000;
 	background-color:#FFFFFF;
 }
-.disabled-link{
-	pointer-events = none;
-}
+
 
 

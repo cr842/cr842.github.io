@@ -1,0 +1,85 @@
+<html>
+<head>
+		<title> Lost In Space </title>
+		<link rel="stylesheet" href="zurbon.css">
+</head>
+<body>
+<script>
+function skip()
+{
+	document.getElementById('skip').style.animationDuration = "0s";
+	document.getElementById('skip').style.animationDelay = "0s";
+	document.getElementById('skip1').style.animationDuration = "0s";
+	document.getElementById('skip1').style.animationDelay = "0s";
+	document.getElementById('skip2').style.animationDuration = "0s";
+	document.getElementById('skip2').style.animationDelay = "0s";
+	document.getElementById('skip3').style.animationDuration = "0s";
+	document.getElementById('skip3').style.animationDelay = "0s";
+}
+</script>	
+	<section>
+		<div style = "position:absolute; left:25px; top:100px;" class="typing">
+			<p id="skip">
+			You leave the ship and set foot in the immense desert. With no sense of bearing
+			</p>
+			<p id="skip1">
+			your only choice is to take a gamble and walk in a random direction. You do a 
+			</p>
+			<p id="skip2">
+			quick 360 to see if you can spot any signs of life on the horizon. You see nothing.
+			<p id="skip3">
+			Time to choose direction.
+			</p>
+		</div>
+		<div class="stars star1"></div>
+		<div class="stars star2"></div>
+		<div class="stars star3"></div>
+		<div class="stars star4"></div>
+		<div class="stars star5"></div>
+		<div class="stars star6"></div>
+		<div class="stars star7"></div>
+		<div class="stars star8"></div>
+		<div style = "position:absolute; left:1100px; top:650px;">
+			<button class="button" onclick="skip()">Skip</button>
+		</div>
+		<div style = "position:absolute; left: center; top:350px;">
+			<a href="astrix-forward.html" class="button">Straight forward as always</a>
+		</div>
+		<div style = "position:absolute; left: center; top:500px;">
+			<a href="astrix-eeny.html" class="button">Eeny, meeny, miny, moe</a>
+		</div>
+		<div style = "position:absolute; left: center; top:650px;">
+			<a href="astrix-leave1.html" id="kitchen" class="button">Actually this is a bad idea</a>
+		</div>
+	</div>
+	</section>
+	
+<script>
+//Code to retrieve variable from link was taken from https://css-tricks.com/snippets/javascript/get-url-variables/
+function getUrlVars(variable) {
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for(var i=0;i<vars.length;i++){
+		var pair = vars[i].split("=");
+		if(pair[0] == variable){return pair[1];}
+	}
+	return(false)
+}
+
+
+if(getUrlVars("kitchenClicked") == "true"){
+	sessionStorage.setItem("kitchenClicked","true");
+}
+if(sessionStorage.getItem("kitchenClicked") == "true"){
+	document.getElementById("kitchen").href = "kitchen-return.html";
+}
+
+if(getUrlVars("returnClicked") == "true"){
+	sessionStorage.setItem("returnClicked","true");
+}
+if(sessionStorage.getItem("returnClicked") == "true"){
+	document.getElementById("kitchen").style.display = "none";
+}
+</script>
+</body>
+<html>

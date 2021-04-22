@@ -1,0 +1,82 @@
+<html>
+<head>
+		<title> Lost In Space </title>
+		<link rel="stylesheet" href="zurbon.css">
+</head>
+<body>
+<script>
+function skip()
+{
+	document.getElementById('skip').style.animationDuration = "0s";
+	document.getElementById('skip').style.animationDelay = "0s";
+	document.getElementById('skip1').style.animationDuration = "0s";
+	document.getElementById('skip1').style.animationDelay = "0s";
+	document.getElementById('skip2').style.animationDuration = "0s";
+	document.getElementById('skip2').style.animationDelay = "0s";
+	document.getElementById('skip3').style.animationDuration = "0s";
+	document.getElementById('skip3').style.animationDelay = "0s";
+}
+</script>	
+	<section>
+		<div style = "position:absolute; left:25px; top:100px;" class="typing">
+			<p id="skip">
+			The first thing to do is turn the power on, these stations were built to
+			</p>
+			<p id="skip1">
+			function for generations so chances are it is still fully operational. The only
+			</p>
+			<p id="skip2">
+			problem is you that don't know which way it is to turn the power back on.
+			<p id="skip3">
+			Coincidentally there is a fork up ahead... left or right?
+			</p>
+		</div>
+		<div class="stars star1"></div>
+		<div class="stars star2"></div>
+		<div class="stars star3"></div>
+		<div class="stars star4"></div>
+		<div class="stars star5"></div>
+		<div class="stars star6"></div>
+		<div class="stars star7"></div>
+		<div class="stars star8"></div>
+		<div style = "position:absolute; left:1100px; top:650px;">
+			<button class="button" onclick="skip()">Skip</button>
+		</div>
+		<div style = "position:absolute; left: center; top:350px;">
+			<a href="upharus-left.html" class="button" id="leftChoice">Left</a>
+		</div>
+		<div style = "position:absolute; left: center; top:500px;">
+			<a href="upharus-right.html" class="button" id="rightChoice">Right</a>
+		</div>
+	</div>
+	</section>
+<script>
+function getUrlVars(variable) {
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for(var i=0;i<vars.length;i++){
+		var pair = vars[i].split("=");
+		if(pair[0] == variable){return pair[1];}
+	}
+	return(false)
+}
+
+
+if(getUrlVars("left") == "true"){
+	sessionStorage.setItem("left","true");
+}
+if(sessionStorage.getItem("left") == "true"){
+	document.getElementById("leftChoice").style.display = "none";
+}
+if(getUrlVars("power") == "true"){
+	sessionStorage.setItem("power","true");
+}
+if(sessionStorage.getItem("power") == "true"){
+	document.getElementById("rightChoice").href = "upharus-lab.html";
+	document.getElementById("rightChoice").innerHTML = "Labs";
+}
+
+</script>
+
+</body>
+<html>

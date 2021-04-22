@@ -16,7 +16,7 @@ section
 	justify-content: center;
 	align-items: center;
 }
-section .star
+section .stars
 {
 	position: absolute;
 	top:0;
@@ -26,42 +26,42 @@ section .star
 	pointer-events: none;
 	animation: animate 8s ease-in-out infinite, backgroundmove 16s linear infinite;
 }
-section .star.star1
+section .stars.star1
 {
 	animation-delay: 0s;
 	background: url(star1.png);
 }
-section .star.star2
+section .stars.star2
 {
 	animation-delay: -1s;
 	background: url(star2.png);
 }
-section .star.star3
+section .stars.star3
 {
 	animation-delay: -2s;
 	background: url(star3.png);
 }
-section .star.star4
+section .stars.star4
 {
 	animation-delay: -3s;
 	background: url(star4.png);
 }
-section .star.star5
+section .stars.star5
 {
 	animation-delay: -4s;
 	background: url(star5.png);
 }
-section .star.star6
+section .stars.star6
 {
 	animation-delay: -5s;
 	background: url(star6.png);
 }
-section .star.star7
+section .stars.star7
 {
 	animation-delay: -6s;
 	background: url(star7.png);
 }
-section .star.star8
+section .stars.star8
 {
 	animation-delay: -7s;
 	background: url(star8.png);
@@ -92,50 +92,7 @@ body {
   background-color:#333;
 }
 
-.output {
-  text-align:center;
-  font-family: 'Source Code Pro', monospace;
-  color:white;
-  h1 {
-    font-size:30px;
-  }
-}
-
-/* Cursor Styling */
-
-.cursor::after {
-  content:'';
-  display:inline-block;
-  margin-left:3px;
-  background-color:white;
-  animation-name:blink;
-  animation-duration:0.5s;
-  animation-iteration-count: infinite;
-}
-h1.cursor::after {
-  height:24px;
-  width:13px;
-}
-p.cursor::after {
-  height:13px;
-  width:6px;
-}
-
-@keyframes blink {
-  0% {
-    opacity:1;
-  }
-  49% {
-    opacity:1;
-  }
-  50% {
-    opacity:0;
-  }
-  100% {
-    opacity:0;
-  }
-}
-.css-typing p {
+.typing p {
   border-right: .15em solid white;
   font-family: "Courier";
   font-size: 50px;
@@ -143,7 +100,7 @@ p.cursor::after {
   overflow: hidden;
   color: white;
 }
-.css-typing p:nth-child(1) {
+.typing p:nth-child(1) {
   width: 30em;
   -webkit-animation: type 2s steps(40, end);
   animation: type 2s steps(100, end);
@@ -151,7 +108,7 @@ p.cursor::after {
   animation-fill-mode: forwards;
 }
 
-.css-typing p:nth-child(2) {
+.typing p:nth-child(2) {
   width: 30em;
   opacity: 0;
   -webkit-animation: type2 2s steps(40, end);
@@ -162,7 +119,7 @@ p.cursor::after {
   animation-fill-mode: forwards;
 }
 
-.css-typing p:nth-child(3) {
+.typing p:nth-child(3) {
   width: 30em;
   opacity: 0;
   -webkit-animation: type3 2s steps(40, end);
@@ -173,7 +130,7 @@ p.cursor::after {
   animation-fill-mode: forwards;
 }
 
-.css-typing p:nth-child(4) {
+.typing p:nth-child(4) {
   width: 30em;
   opacity: 0;
   -webkit-animation: type4 2s steps(40, end);
@@ -336,7 +293,7 @@ button.button{
 	border-radius:0.12em;
 	box-sizing: border-box;
 	text-decoration:none;
-	font-family:'Roboto',sans-serif;
+	font-family:"Courier";
 	font-weight:300;
 	color:white;
 	background-color:black;
@@ -359,7 +316,7 @@ a.button{
 	border-radius:0.12em;
 	box-sizing: border-box;
 	text-decoration:none;
-	font-family:'Roboto',sans-serif;
+	font-family:"Courier";
 	font-weight:300;
 	color:white;
 	background-color:black;

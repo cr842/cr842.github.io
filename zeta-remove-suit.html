@@ -1,0 +1,53 @@
+<html>
+<head>
+		<title> Lost In Space </title>
+		<link rel="stylesheet" href="zurbon.css">
+</head>
+<body>
+<script>
+function skip()
+{
+	document.getElementById('skip').style.animationDuration = "0s";
+	document.getElementById('skip').style.animationDelay = "0s";
+	document.getElementById('skip1').style.animationDuration = "0s";
+	document.getElementById('skip1').style.animationDelay = "0s";
+	document.getElementById('skip2').style.animationDuration = "0s";
+	document.getElementById('skip2').style.animationDelay = "0s";
+	document.getElementById('skip3').style.animationDuration = "0s";
+	document.getElementById('skip3').style.animationDelay = "0s";
+}
+</script>	
+	<section>
+		<div style = "position:absolute; left:25px; top:100px;" class="typing">
+			<p id="skip">
+			Really... you aren't going to go out and explore? That's probably the best choice,
+			</p>
+			<p id="skip1">
+			it looks pretty dangerous out there. Well I guess we will just return to orbit then.
+			</p>
+			<p id="skip2">
+			Maybe on the next planet you will feel like exploring. You know you're supposed to  
+			<p id="skip3">
+			find the items right? Okay let's go then.
+			</p>
+		</div>
+		<div class="stars star1"></div>
+		<div class="stars star2"></div>
+		<div class="stars star3"></div>
+		<div class="stars star4"></div>
+		<div class="stars star5"></div>
+		<div class="stars star6"></div>
+		<div class="stars star7"></div>
+		<div class="stars star8"></div>
+		<div style = "position:absolute; left:1100px; top:650px;">
+			<button class="button" onclick="skip()">Skip</button>
+		</div>
+		<div style = "position:absolute; left: center; top:400px">
+			<a href="planet.html?zetaClicked=true" class="button1">Leave</a>
+		</div>
+	</div>
+	</section>
+
+
+</body>
+<html>

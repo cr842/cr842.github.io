@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Game</title>
+<link rel="stylesheet" href="shooter.css">
+</head>
+<body>
+<canvas></canvas>
+<script>
+const canvas = document.querySelector('canvas')
+const context = canvas.getContext('2d')
+
+//define canvas size
+canvas.width = innerWidth
+canvas.height = innerHeight
+
+//create class for player object
+class Player {
+//constructor defines what player should look like (size, colour)
+	constructor(x, y, radius, colour) {
+		this.x = x
+		this.y = y
+		this.radius = radius
+		this.colour = colour
+	}
+//draw the player (just a circle)
+	drawPlayer() {
+		context.beginPath()
+		context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
+		context.fillStyle = this.colour
+		context.fill()
+	}
+}
+
+//defines the bullet class, same as player but smaller and needs a variable for velocity so it can move.
+class Bullet {
+	constructor(x, y, radius, colour, velocity) {
+		this.x = x
+		this.y = y
+		this.radius = radius
+		this.colour = colour
+		this.velocity = velocity
+	}
+	
+	drawBullet() {
+		context.beginPath()
+		context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
+		context.fillStyle = this.colour
+		context.fill()
+	}
+	
+	move() {
+		this.drawBullet()
+		//bullet position equals current position + velocity
+		this.x = this.x + this.velocity.x 
+		this.y = this.y + this.velocity.y 
+	}
+}
+
+//middle of canvas (to place player in the middle of the screen)
+const xMid = (canvas.width / 2);
+const yMid = (canvas.height / 2);
+
+//define player for constructor
+const player = new Player(xMid, yMid, 30, 'black')
+player.drawPlayer()
+
+//create bullet
+const bullet = new Bullet(
+	xMid, 
+	yMid, 
+	5, 
+	'blue', 
+	{
+		x: 1,
+		y: 1
+	}
+)
+
+
+
+const bullets = []
+
+
+function animate(){
+	requestAnimationFrame(animate)
+	bullets.forEach((bullet) => {
+		bullet.move()
+	})
+}
+
+//when mouse is clicked
+addEventListener('click', (event) => { 
+	const angle = Math.atan2(event.clientY - yMid, event.clientX - xMid)
+	const velocity = {
+		x: Math.cos(angle),
+		y: Math.sin(angle)
+	}
+	bullets.push(new Bullet(xMid, yMid, 5, 'red', velocity))
+})
+
+animate()
+
+
+</script>
+</body>
+<html>

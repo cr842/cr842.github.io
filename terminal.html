@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>Lost in Space</title>
+<link rel="stylesheet" href="terminal.css">
+</head>
+<body>
+<p>Items:</p>
+<div id="items"></div>
+<p>Planets visited:</p>
+<div id="planets"></div>
+<div style = "position:absolute; left:1100px; top:650px;">
+	<a href="planet.html" class="button">Return</a>
+</div>
+<script>
+const items = []
+if(sessionStorage.getItem("coordinates") == "true"){
+	items.push("Co-ordinates");
+}
+if(sessionStorage.getItem("beaconFound") == "true"){
+	items.push("Beacon");
+}
+if(sessionStorage.getItem("alienTech") == "true"){
+	items.push("Alien Tech");
+}
+
+if (items.length === 0){
+	document.getElementById("items").innerHTML = "None";
+} else {
+	for (var i = 0; i < items.length; i++) {
+		document.getElementById("items").innerHTML += items[i];
+		if((i + 1) != (items.length)){
+			document.getElementById("items").innerHTML += ", ";
+		}
+	}
+}
+
+const planets = []
+if(sessionStorage.getItem("zurbonClicked") == "true"){
+	planets.push("Zurbon");
+}
+if(sessionStorage.getItem("zetaClicked") == "true"){
+	planets.push("Zeta");
+}
+if(sessionStorage.getItem("upharusClicked") == "true"){
+	planets.push("Upharus");
+}
+if(sessionStorage.getItem("astrixClicked") == "true"){
+	planets.push("Astrix-7");
+}
+if(sessionStorage.getItem("neriliaClicked") == "true"){
+	planets.push("Nerilia");
+}
+if(sessionStorage.getItem("plutonClicked") == "true"){
+	planets.push("Pluton");
+}
+
+if (planets.length === 0){
+	document.getElementById("planets").innerHTML = "None";
+} else {
+	for (var i = 0; i < planets.length; i++) {
+		document.getElementById("planets").innerHTML += planets[i];
+		if((i + 1) != (planets.length)){
+			document.getElementById("planets").innerHTML += ", ";
+		}
+	}
+}
+</script>
+</body>
+</html>
